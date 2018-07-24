@@ -1,0 +1,40 @@
+TODO List
+
+Change MySQL methods to boolean for error checking,
+Implement Item View UI
+Implement Inventory View UI
+Implement Employee View UI
+Implement Building View UI
+Implement Building Creation UI
+Implement Item Creation UI
+Implement Employee/User Creation UI *DONE*
+Finish Home UI 
+Finish Login UI
+
+Classes
+Database Util
+Error handling
+All controllers for UI's
+  itemView Controller
+  inventory view Controller
+  employee View Controller
+  buildingView Controller
+  buildingCreation Controller
+  item creation Controller
+  user/employee creation Controller *DONE*
+  home UI Controller
+  login UI Controller
+sql query handling
+shared method class
+
+Duties
+attempt to login/login
+create users/employees(creating employee auto creates a user with certain pattern) *DONE*
+new userlogin must change password
+home ui portions are disabled if user doesn't have permission level
+create/delete/view/update buildings
+create/delete/view/update employees/users *CREATE DONE*
+view/update/ building employees /supervisor
+create/delete/view/update building inventory
+create/delete/view/update  items
+

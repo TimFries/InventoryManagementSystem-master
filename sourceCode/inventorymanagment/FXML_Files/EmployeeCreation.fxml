@@ -15,8 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="479.0" prefWidth="874.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="inventorymanagment.Controller_Files.EmployeeCreationController">
+<AnchorPane id="AnchorPane" prefHeight="479.0" prefWidth="874.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventorymanagment.Controller_Files.EmployeeCreationController">
    <children>
       <GridPane alignment="CENTER" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #dfefff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -161,20 +160,20 @@
                   </Label>
                </children>
             </HBox>
-            <TextField fx:id="firstNameField" onKeyPressed="#handleUsernameCreation" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
-            <TextField fx:id="lastNameField" onKeyPressed="#handleUsernameCreation" prefWidth="170.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+            <TextField fx:id="firstNameField" onKeyTyped="#handleFieldFormat" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+            <TextField fx:id="lastNameField" onKeyTyped="#handleFieldFormat" prefWidth="170.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="addressField" prefWidth="170.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <TextField fx:id="cityField" prefWidth="160.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <TextField fx:id="zipcodeField" prefHeight="25.0" prefWidth="109.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <TextField fx:id="addressField" onKeyTyped="#handleFieldFormat" prefWidth="170.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <TextField fx:id="cityField" onKeyTyped="#handleFieldFormat" prefWidth="160.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField fx:id="zipcodeField" onKeyTyped="#handleOnlyNumbers" prefHeight="25.0" prefWidth="109.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets left="9.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="emailField" prefWidth="160.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="3">
+            <TextField fx:id="emailField" onKeyTyped="#handleFieldFormat" prefWidth="160.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="104.0" />
                </GridPane.margin>
@@ -184,7 +183,7 @@
                   <Insets left="70.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="usernameDisplay" disable="true" editable="false" prefWidth="170.0" style="-fx-text-fill: BLACK;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+            <TextField fx:id="usernameDisplay" disable="true" editable="false" prefWidth="170.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -219,6 +218,7 @@
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </GridPane.margin>
             </Separator>
+            <Text fx:id="genPasswordText" fill="#0105dd" onMouseClicked="#handleUsernameGen" strokeType="OUTSIDE" strokeWidth="0.0" text="*Generate Username" GridPane.columnIndex="2" GridPane.rowIndex="4" />
          </children>
       </GridPane>
    </children>

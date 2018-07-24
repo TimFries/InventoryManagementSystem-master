@@ -32,9 +32,9 @@
                </font>
             </Label>
             <Label fx:id="errorMessageLabel" style="-fx-text-fill: RED;" text="Label" visible="false" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Label fx:id="usernameLabel" text="Username" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Label fx:id="usernameLabel" text="Username:" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
             <TextField fx:id="loginUsernameField" maxWidth="200.0" promptText="Username" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
-            <Label fx:id="passwordLabel" text="Password" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Label fx:id="passwordLabel" text="Password:" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
             <PasswordField fx:id="loginPasswordField" maxWidth="200.0" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Button fx:id="loginButton" mnemonicParsing="false" onAction="#handleLoginButton" text="Login" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                <font>

@@ -51,17 +51,19 @@ public class EmployeeInfoHandler{
         
     }
     
+    //TODO implement update template for EmployeeInfo
     public static void update(EmployeeInfo data){
         
     }
     
+    //TODO implement List select template for EmployeeInfo
     public static List<EmployeeInfo> select(){
        List<EmployeeInfo> employeeList = new ArrayList<>();
        
        return employeeList;
     }
     
-    
+    //TODO implement single select template for EmployeeInfo
     public static EmployeeInfo select(Integer employeeID){
         EmployeeInfo employeeData = null;
         
@@ -70,7 +72,20 @@ public class EmployeeInfoHandler{
     
     
     public static void delete(Integer employeeID){
-        
+        String sql = "DELETE FROM " +EMPLOYEE_TABLE+ " WHERE employeeID = ? LIMIT 1";
+        try(
+                Connection  conn = DBUtil.getConnection();
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                ){
+            stmt.setInt(1, employeeID);
+            stmt.execute();
+            
+            
+            
+        }
+        catch(SQLException e){
+            DBUtil.processException(e);
+        }
     }
     
     public static void createUser(String username, String password, String permissions, EmployeeInfo employeeData){
@@ -97,7 +112,24 @@ public class EmployeeInfoHandler{
         }
     }
     
-    public static void changePassword(Integer employeeID){
+    public static void changePassword(Integer employeeID, String newPassword){
+        String sql = "UPDATE " +LOGIN_TABLE+ " SET password = MD5(?),"+
+                                             " changePassword = ? WHERE employeeID = ?";
+        try(
+                Connection  conn = DBUtil.getConnection();
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                ){
+            stmt.setString(1, newPassword);
+            stmt.setInt(2, 0);
+            stmt.setInt(3, employeeID);
+            stmt.execute();
+            
+            
+            
+        }
+        catch(SQLException e){
+            DBUtil.processException(e);
+        }
         
     }
     

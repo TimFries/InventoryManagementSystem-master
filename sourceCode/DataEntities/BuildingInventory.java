@@ -13,20 +13,26 @@ import java.sql.Timestamp;
  */
 public class BuildingInventory {
     
-    
-    private ItemInfo itemID;
+    private Integer buildingID;
+    private Integer itemID;
     private Integer stock;
     private Integer restockQuantity;
     private Timestamp restockDate;
     private Integer totalSold;
 
-    
+    public Integer getBuildingID() {
+        return buildingID;
+    }
 
-    public ItemInfo getItemID() {
+    public void setBuildingID(Integer buildingID) {
+        this.buildingID = buildingID;
+    }
+
+    public Integer getItemID() {
         return itemID;
     }
 
-    public void setItemID(ItemInfo itemID) {
+    public void setItemID(Integer itemID) {
         this.itemID = itemID;
     }
 

@@ -9,11 +9,8 @@ import DataEntities.EmployeeInfo;
 import DataEntities.EntityHandlers.EmployeeInfoHandler;
 import Shared.ComboBoxDefaults;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.Random;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javafx.fxml.FXML;
@@ -144,7 +141,7 @@ public class EmployeeCreationController implements Initializable {
                 
             }
             else{
-                System.out.println("Email didn't match pattern");
+                System.out.println("A Field Pattern failed");
             }
         }
         else{
@@ -223,28 +220,28 @@ public class EmployeeCreationController implements Initializable {
             firstNameField.setStyle("-fx-text-box-border: red;");
         }
         else{
-            firstNameField.setStyle("-fx-text-box-border: black;");
+            firstNameField.setStyle(null);
         }
         if(lastNameField.getText().isEmpty()){
             pass = false;
             lastNameField.setStyle("-fx-text-box-border: red;");
         }
         else{
-            lastNameField.setStyle("-fx-text-box-border: black;");
+            lastNameField.setStyle(null);
         }
         if(addressField.getText().isEmpty()){
             pass = false;
             addressField.setStyle("-fx-text-box-border: red;");
         }
         else{
-            addressField.setStyle("-fx-text-box-border: black;");
+            addressField.setStyle(null);
         }
         if(cityField.getText().isEmpty()){
             pass = false;
             cityField.setStyle("-fx-text-box-border: red;");
         }
         else{
-            cityField.setStyle("-fx-text-box-border: black;");
+            cityField.setStyle(null);
         }
         if(stateChoice.getSelectionModel().isEmpty()){
             pass = false;
@@ -258,35 +255,35 @@ public class EmployeeCreationController implements Initializable {
             zipcodeField.setStyle("-fx-text-box-border: red;");
         }
         else{
-            zipcodeField.setStyle("-fx-text-box-border: black;");
+            zipcodeField.setStyle(null);
         }
         if(emailField.getText().isEmpty()){
             pass = false;
             emailField.setStyle("-fx-text-box-border: red;");
         }
         else{
-            emailField.setStyle("-fx-text-box-border: black;");
+            emailField.setStyle(null);
         }
         if(phoneField.getText().isEmpty()){
             pass = false;
             phoneField.setStyle("-fx-text-box-border: red;");
         }
         else{
-            phoneField.setStyle("-fx-text-box-border: black;");
+            phoneField.setStyle(null);
         }
         if(usernameDisplay.getText().isEmpty()){
             pass = false;
             usernameDisplay.setStyle("-fx-text-box-border: red;");
         }
         else{
-            usernameDisplay.setStyle("-fx-text-box-border: black;");
+            usernameDisplay.setStyle(null);
         }
         if(tempPasswordDisplay.getText().isEmpty()){
             pass = false;
             tempPasswordDisplay.setStyle("-fx-text-box-border: red;");
         }
         else{
-            tempPasswordDisplay.setStyle("-fx-text-box-border: black;");
+            tempPasswordDisplay.setStyle(null);
         }
         
         
@@ -304,21 +301,21 @@ public class EmployeeCreationController implements Initializable {
             emailField.setStyle("-fx-text-box-border: red;");
         }
         else{
-            emailField.setStyle("-fx-text-box-border: black;");
+            emailField.setStyle(null);
         }
         if(phoneField.getText().trim().length() != 10){
             pass = false;
             phoneField.setStyle("-fx-text-box-border: red;");
         }
         else{
-            phoneField.setStyle("-fx-text-box-border: black;");
+            phoneField.setStyle(null);
         }
         if(zipcodeField.getText().trim().length() != 5){
             pass = false;
             zipcodeField.setStyle("-fx-text-box-border: red;");
         }
         else{
-            zipcodeField.setStyle("-fx-text-box-border: black;");
+            zipcodeField.setStyle(null);
         }
         
         return pass;

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="325.0" prefWidth="622.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventorymanagment.Controller_Files.BuildingCreationController">
+   <children>
+      <GridPane alignment="CENTER" prefHeight="325.0" prefWidth="622.0" style="-fx-background-color: #dfefff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+            <ColumnConstraints fillWidth="false" hgrow="NEVER" maxWidth="155.0" minWidth="10.0" prefWidth="155.0" />
+            <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="177.0" minWidth="10.0" prefWidth="152.0" />
+          <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="184.0" minWidth="10.0" prefWidth="184.0" />
+          <ColumnConstraints fillWidth="false" hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="98.0" valignment="CENTER" vgrow="NEVER" />
+          <RowConstraints maxHeight="94.0" minHeight="10.0" prefHeight="31.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="83.0" minHeight="10.0" prefHeight="83.0" valignment="CENTER" vgrow="NEVER" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="titleLabel" text="Building Creation" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="addressLabel" text="Street Address:" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="cityLabel" text="City:" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="zipcodeLabel" text="Zipcode:" GridPane.rowIndex="2">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="14.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="stateLabel" text="State:" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="39.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="phoneLabel" text="Contact Phone:" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="36.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="addressField" onKeyTyped="#handleFieldFormat" prefWidth="170.0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+               <GridPane.margin>
+                  <Insets left="65.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="cityField" onKeyTyped="#handleFieldFormat" prefWidth="170.0" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="39.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="zipcodeField" onKeyTyped="#handleFieldFormat" prefWidth="100.0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="72.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="phoneField" onKeyTyped="#handleFieldFormat" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets left="113.0" />
+               </GridPane.margin>
+            </TextField>
+            <ComboBox fx:id="stateChoice" prefWidth="85.0" promptText="State" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+            <Button fx:id="submitButton" mnemonicParsing="false" onAction="#handleBuildingCreation" text="Submit" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="27.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#handleBuildingCancel" text="Cancel" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="8.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

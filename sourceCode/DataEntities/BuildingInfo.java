@@ -5,8 +5,6 @@
  */
 package DataEntities;
 
-import java.util.List;
-
 /**
  *
  * @author Tim
@@ -19,8 +17,7 @@ public class BuildingInfo {
     private Integer zipcode;
     private String state;
     private String contactPhone;
-    private List<BuildingInventory> buildingInventory;
-    private List<BuildingEmployees> buildingEmployees;
+
 
     public Integer getBuildingID() {
         return buildingID;
@@ -70,24 +67,6 @@ public class BuildingInfo {
         this.contactPhone = contactPhone;
     }
 
-    public List<BuildingInventory> getBuildingInventory() {
-        return buildingInventory;
-    }
-
-    public void setBuildingInventory(List<BuildingInventory> buildingInventory) {
-        this.buildingInventory = buildingInventory;
-    }
-
-    public List<BuildingEmployees> getBuildingEmployees() {
-        return buildingEmployees;
-    }
-
-    public void setBuildingEmployees(List<BuildingEmployees> buildingEmployees) {
-        this.buildingEmployees = buildingEmployees;
-    }
-    
-    
-    
-    
+  
     
 }

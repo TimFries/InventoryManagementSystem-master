@@ -6,6 +6,7 @@
 package DataEntities.EntityHandlers;
 
 import DataEntities.EmployeeInfo;
+import DataEntities.LoginInfo;
 import Shared.DBUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -79,9 +80,7 @@ public class EmployeeInfoHandler{
                 ){
             stmt.setInt(1, employeeID);
             stmt.execute();
-            
-            
-            
+   
         }
         catch(SQLException e){
             DBUtil.processException(e);
@@ -112,7 +111,8 @@ public class EmployeeInfoHandler{
         }
     }
     
-    public static void changePassword(Integer employeeID, String newPassword){
+    public static boolean changePassword(String newPassword){
+        boolean pass = false;
         String sql = "UPDATE " +LOGIN_TABLE+ " SET password = MD5(?),"+
                                              " changePassword = ? WHERE employeeID = ?";
         try(
@@ -121,16 +121,18 @@ public class EmployeeInfoHandler{
                 ){
             stmt.setString(1, newPassword);
             stmt.setInt(2, 0);
-            stmt.setInt(3, employeeID);
-            stmt.execute();
+            stmt.setInt(3, LoginInfo.getEmployeeID());
+            int affected = stmt.executeUpdate();
             
-            
-            
+            if(affected == 1){
+                pass = true;
+            }
+   
         }
         catch(SQLException e){
             DBUtil.processException(e);
         }
-        
+        return pass;
     }
     
     

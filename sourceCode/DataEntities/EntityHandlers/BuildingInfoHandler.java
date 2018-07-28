@@ -6,6 +6,10 @@
 package DataEntities.EntityHandlers;
 
 import DataEntities.BuildingInfo;
+import Shared.DBUtil;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,15 +23,43 @@ public class BuildingInfoHandler {
     
     
     public static void create(BuildingInfo data){
+        String sql = "INSERT into " + BUILDING_TABLE + " (streetAddress, city, zipcode, state, contactPhone)"+
+                                                       " VALUES (?, ?, ?, ?, ?)";
         
-    }
-    
+        try(
+                Connection conn = DBUtil.getConnection();
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                ){
+            
+            stmt.setString(1, data.getStreetAddress());
+            stmt.setString(2, data.getCity());
+            stmt.setInt(3, data.getZipcode());
+            stmt.setString(4, data.getState());
+            stmt.setString(5, data.getContactPhone());
+            stmt.execute();
+        }
+      catch (SQLException ex) {
+            DBUtil.processException(ex);
+        }
+    }   
     public static void update(BuildingInfo data){
         
     }
     
-    public static void delete(BuildingInfo data){
+    public static void delete(Integer buildingID){
+        String sql = "DELETE from " + BUILDING_TABLE + " WHERE buildingID = ?";
         
+        try(
+                Connection  conn = DBUtil.getConnection();
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                ){
+            stmt.setInt(1, buildingID);
+            stmt.execute();
+   
+        }
+        catch(SQLException e){
+            DBUtil.processException(e);
+        }
     }
     
     public static List<BuildingInfo> selectAll(){

@@ -51,9 +51,7 @@ public class ItemInfoHandler {
                 ){
             stmt.setInt(1, itemID);
             stmt.execute();
-            
-            
-            
+      
         }
         catch(SQLException e){
             DBUtil.processException(e);

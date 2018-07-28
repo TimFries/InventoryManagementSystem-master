@@ -23,17 +23,33 @@ public class BuildingInventoryHandler {
     
     
     public static void delete(Integer buildingID, Integer itemID){
+        String sql = "DELETE from " + INVENTORY_TABLE + " WHERE buildingID = ? "
+                                                      + " AND itemID = ?";
         
+        try(
+                Connection  conn = DBUtil.getConnection();
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                ){
+            stmt.setInt(1, buildingID);
+            stmt.setInt(2, itemID);
+            stmt.execute();
+   
+        }
+        catch(SQLException e){
+            DBUtil.processException(e);
+        }
     }
     
     public static void insert(Integer buildingID, Integer itemID){
-        String sql = "INSERT into " +INVENTORY_TABLE+ " (buildingID, itemID, stock)"
-                                                    + " VALUES (?, ?, ?)";
+        String sql = "INSERT into " +INVENTORY_TABLE+ " (buildingID, itemID)"
+                                                    + " VALUES (?, ?)";
         try(
                 Connection  conn = DBUtil.getConnection();
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 ){
 
+            stmt.setInt(1, buildingID);
+            stmt.setInt(2, itemID);
             stmt.execute();
             
             
